@@ -77,6 +77,8 @@ public class MainManager : MonoBehaviour
         if(m_Points > MenuManager.Instance.recordScore)
         {
             MenuManager.Instance.saveRecord(m_Points);
+            MenuManager.Instance.loadRecord();
+            HighScoreText.text = $"Best Score : {MenuManager.Instance.recordName}: {MenuManager.Instance.recordScore}";
         }
 
         m_GameOver = true;
